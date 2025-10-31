@@ -1,0 +1,2703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPath - IT Career Explorer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<style>
+
+/* CyberPath Brand-Compliant Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #0d1117; /* Deep Space */
+    color: #c9d1d9; /* Silver - Body Text */
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Header */
+.header {
+    background-color: #161b22; /* Carbon */
+    border-bottom: 1px solid #30363d; /* Slate */
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f6fc; /* Ghost White */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: #c9d1d9;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: #21262d;
+    border-color: #30363d;
+}
+
+.nav-link.active {
+    background-color: #238636; /* Matrix Green */
+    color: #ffffff;
+    border-color: #238636;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 48px 0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background-icon {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #f0f6fc; /* Ghost White */
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: #8b949e; /* Muted text */
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+    background-color: #161b22; /* Carbon */
+    border: 1px solid #30363d; /* Slate */
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #30363d;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f6fc;
+}
+
+/* Buttons - Brand Compliant */
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid;
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: #238636; /* Matrix Green - Primary Actions */
+    color: #ffffff;
+    border-color: #238636;
+}
+
+.btn-primary:hover {
+    background-color: #2ea043; /* Success Green */
+    border-color: #2ea043;
+}
+
+.btn-secondary {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border-color: #30363d;
+}
+
+.btn-secondary:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: 600;
+    color: #58a6ff; /* Cyber Blue */
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #8b949e;
+}
+
+/* Feature Grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.feature-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+}
+
+.feature-card:hover {
+    border-color: #8b949e;
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    color: #f0f6fc;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: #8b949e;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Quiz */
+.quiz-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.progress-container {
+    margin-bottom: 24px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #21262d;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #238636; /* Matrix Green */
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #8b949e;
+    margin-top: 8px;
+}
+
+.question-card {
+    margin-bottom: 32px;
+}
+
+.question-title {
+    font-size: 20px;
+    color: #f0f6fc;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    color: #c9d1d9;
+}
+
+.option:hover {
+    border-color: #8b949e;
+    background-color: #161b22;
+}
+
+.option.selected {
+    border-color: #238636;
+    background-color: #0d421a;
+    color: #f0f6fc;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 16px;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-label {
+    font-size: 14px;
+    color: #8b949e;
+    font-weight: 500;
+}
+
+select, input[type="text"] {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #58a6ff; /* Cyber Blue */
+}
+
+/* Career Grid */
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 16px;
+}
+
+.career-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    transition: border-color 0.2s;
+}
+
+.career-card:hover {
+    border-color: #8b949e;
+}
+
+.career-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 12px;
+}
+
+.career-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #58a6ff; /* Cyber Blue - Links */
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.career-title:hover {
+    text-decoration: underline;
+}
+
+.like-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.like-btn {
+    background: none;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.like-btn:hover {
+    border-color: #8b949e;
+}
+
+.like-btn.liked {
+    color: #f85149; /* Alert Red */
+    border-color: #f85149;
+}
+
+.like-count {
+    font-size: 12px;
+    color: #8b949e;
+}
+
+/* Badges - Brand Compliant */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.badge-entry {
+    background-color: #dafbe1;
+    color: #1f883d;
+    border: 1px solid #2ea043; /* Success Green */
+}
+
+.badge-intermediate {
+    background-color: #fff8c5;
+    color: #9a6700;
+    border: 1px solid #f0883e; /* Warning Orange */
+}
+
+.badge-advanced {
+    background-color: #ffebe9;
+    color: #a40e26;
+    border: 1px solid #f85149; /* Alert Red */
+}
+
+.salary {
+    color: #2ea043; /* Success Green */
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #8b949e;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.skill-tag {
+    background-color: #1f6feb1a;
+    color: #58a6ff; /* Cyber Blue */
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    border: 1px solid #1f6feb;
+}
+
+.info-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    color: #8b949e;
+}
+
+.info-item strong {
+    color: #c9d1d9;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.modal-content {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 32px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #30363d;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #8b949e;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #c9d1d9;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin: 24px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #30363d;
+}
+
+/* Timeline */
+.timeline {
+    margin-top: 24px;
+}
+
+.timeline-year {
+    margin-bottom: 32px;
+}
+
+.timeline-year-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #58a6ff; /* Cyber Blue */
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.timeline-year-title::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: #238636; /* Matrix Green */
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    padding-left: 28px;
+    border-left: 2px solid #30363d;
+}
+
+.timeline-item {
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+.timeline-item h4 {
+    color: #f0f6fc;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.timeline-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-item li {
+    color: #8b949e;
+    font-size: 13px;
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline-item li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #58a6ff; /* Cyber Blue */
+}
+
+.cert-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.cert-link:hover {
+    text-decoration: underline;
+}
+
+/* Comparison */
+.comparison-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.comparison-card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.comparison-select {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Results */
+.result-section {
+    margin-top: 32px;
+}
+
+.result-header {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, #0d421a 0%, #238636 100%);
+    border: 1px solid #2ea043;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.result-header h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #f0f6fc;
+    margin-bottom: 12px;
+}
+
+.result-header p {
+    color: #c9d1d9;
+    font-size: 16px;
+}
+
+/* Tabs */
+.tab-container {
+    display: flex;
+    gap: 4px;
+    border-bottom: 1px solid #30363d;
+    margin-bottom: 24px;
+}
+
+.tab {
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: #8b949e;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: #c9d1d9;
+}
+
+.tab.active {
+    color: #f0f6fc;
+    border-bottom-color: #238636; /* Matrix Green */
+}
+
+/* Resources */
+.resource-list {
+    list-style: none;
+}
+
+.resource-item {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+
+.resource-item h4 {
+    color: #f0f6fc;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.resource-item p {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.resource-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.resource-tag {
+    background-color: #0d1117;
+    color: #8b949e;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    border: 1px solid #30363d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    .modal-content {
+        padding: 16px;
+        margin: 16px;
+    }
+
+    .comparison-container {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        width: 100%;
+    }
+}
+
+</style>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <a href="#" class="logo" onclick="showSection('home')">
+                <svg width="140" height="40" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+                    <path d="M10 45 L20 30 L35 35 L50 15" stroke="#2ea043" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="10" cy="45" r="4" fill="#2ea043"/>
+                    <circle cx="20" cy="30" r="4" fill="#2ea043"/>
+                    <circle cx="35" cy="35" r="4" fill="#2ea043"/>
+                    <circle cx="50" cy="15" r="4" fill="#2ea043"/>
+                    <text x="65" y="35" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="#f0f6fc">CyberPath</text>
+                </svg>
+            </a>
+            <nav class="nav">
+                <a href="#" class="nav-link active" onclick="showSection('home')">Overview</a>
+                <a href="#" class="nav-link" onclick="showSection('quiz')">Career Quiz</a>
+                <a href="#" class="nav-link" onclick="showSection('careers')">Browse Careers</a>
+                <a href="#" class="nav-link" onclick="showSection('compare')">Compare</a>
+                <a href="#" class="nav-link" onclick="showSection('resources')">Resources</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home" class="section active">
+            <div class="hero-section">
+                <h1 class="hero-title">Discover Your IT Career Path</h1>
+                <p class="hero-subtitle">Explore cybersecurity and IT careers tailored to your interests, skills, and goals</p>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showSection('quiz')">Take Career Quiz</button>
+                    <button class="btn btn-secondary" onclick="showSection('careers')">Browse All Careers</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">35+</div>
+                    <div class="stat-label">Career Paths</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100+</div>
+                    <div class="stat-label">Learning Resources</div>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h3>Personalized Assessment</h3>
+                    <p>Answer targeted questions about your preferences and receive career recommendations matched to your profile.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <h3>Career Roadmaps</h3>
+                    <p>Get detailed timelines from high school to career, with certification paths and learning milestones.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <h3>Comprehensive Career Data</h3>
+                    <p>Explore detailed information about salaries, required skills, education, and career progression paths.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                    </svg>
+                    <h3>Compare Careers</h3>
+                    <p>Side-by-side comparison of different roles to help you make informed decisions about your future.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                    <h3>Curated Resources</h3>
+                    <p>Access courses, certifications, books, and practice platforms recommended for each career path.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="#238636" stroke-width="2">
+                        <path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                    </svg>
+                    <h3>Track Your Interests</h3>
+                    <p>Save and compare careers that interest you to make informed decisions about your professional future.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz" class="section">
+            <div class="quiz-container">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Career Assessment</h2>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-text" id="progressText">Question 0 of 8</div>
+                    </div>
+                    <div id="quizContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Careers Section -->
+        <div id="careers" class="section">
+            <div style="margin-bottom: 24px;">
+                <h2 style="font-size: 32px; color: #f0f6fc; margin-bottom: 8px; font-weight: 600;">IT & Cybersecurity Careers</h2>
+                <p style="color: #8b949e; font-size: 16px;">Explore roles across security, development, and infrastructure</p>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-group">
+                    <label class="filter-label">Search:</label>
+                    <input type="text" id="searchInput" placeholder="Search careers..." style="width: 200px;">
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Difficulty:</label>
+                    <select id="difficultyFilter">
+                        <option value="all">All Levels</option>
+                        <option value="entry">Entry</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Salary Range:</label>
+                    <select id="salaryFilter">
+                        <option value="all">All Ranges</option>
+                        <option value="50-80">$50k - $80k</option>
+                        <option value="80-120">$80k - $120k</option>
+                        <option value="120+">$120k+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">Sort by:</label>
+                    <select id="sortFilter">
+                        <option value="name">Name</option>
+                        <option value="salary">Salary</option>
+                        <option value="likes">Most Liked</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="career-grid" id="careerGrid"></div>
+        </div>
+
+        <!-- Compare Section -->
+        <div id="compare" class="section">
+            <div style="margin-bottom: 24px;">
+                <h2 style="font-size: 32px; color: #f0f6fc; margin-bottom: 8px; font-weight: 600;">Compare Careers</h2>
+                <p style="color: #8b949e; font-size: 16px;">Select up to 3 careers to compare side-by-side</p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-card">
+                    <select class="comparison-select" id="compare1" onchange="updateComparison()">
+                        <option value="">Select Career 1</option>
+                    </select>
+                    <div id="compareDetails1"></div>
+                </div>
+                <div class="comparison-card">
+                    <select class="comparison-select" id="compare2" onchange="updateComparison()">
+                        <option value="">Select Career 2</option>
+                    </select>
+                    <div id="compareDetails2"></div>
+                </div>
+                <div class="comparison-card">
+                    <select class="comparison-select" id="compare3" onchange="updateComparison()">
+                        <option value="">Select Career 3</option>
+                    </select>
+                    <div id="compareDetails3"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources Section -->
+        <div id="resources" class="section">
+            <div style="margin-bottom: 24px;">
+                <h2 style="font-size: 32px; color: #f0f6fc; margin-bottom: 8px; font-weight: 600;">Learning Resources</h2>
+                <p style="color: #8b949e; font-size: 16px;">Curated courses, certifications, and platforms for your career journey</p>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab active" onclick="showResourceTab('certifications')">Certifications</button>
+                <button class="tab" onclick="showResourceTab('courses')">Online Courses</button>
+                <button class="tab" onclick="showResourceTab('platforms')">Practice Platforms</button>
+                <button class="tab" onclick="showResourceTab('books')">Books & Guides</button>
+            </div>
+
+            <div id="resourceContent"></div>
+        </div>
+    </div>
+
+    <!-- Career Detail Modal -->
+    <div id="careerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" style="color: #f0f6fc; font-size: 24px; font-weight: 600;"></h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+<script>
+
+
+        const careers = [
+            {
+                id: 1,
+                title: "Penetration Tester",
+                salary: "$75,000 - $150,000",
+                salaryMin: 75000,
+                description: "Test systems and networks for vulnerabilities by simulating cyber attacks. Help organizations identify weaknesses before malicious actors do.",
+                skills: ["Network Security", "Python", "Linux", "Web Security", "OSINT"],
+                difficulty: "intermediate",
+                type: ["offensive", "technical", "hands-on"],
+                education: "Bachelor's in Computer Science, Cybersecurity, or related field (or equivalent experience)",
+                certifications: ["CEH", "OSCP", "GPEN", "CompTIA PenTest+"],
+                dayToDay: ["Perform vulnerability assessments", "Conduct penetration tests", "Write detailed reports", "Recommend security improvements", "Stay updated on exploit techniques"],
+                careerPath: "Junior Pentester → Pentester → Senior Pentester → Lead Security Consultant",
+                industries: ["Consulting", "Financial Services", "Technology", "Government"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 2,
+                title: "Security Operations Analyst",
+                salary: "$55,000 - $95,000",
+                salaryMin: 55000,
+                description: "Monitor and respond to security incidents in real-time. Act as the first line of defense against cyber threats.",
+                skills: ["SIEM Tools", "Incident Response", "Log Analysis", "Network Analysis", "Security Monitoring"],
+                difficulty: "entry",
+                type: ["defensive", "technical", "monitoring"],
+                education: "Bachelor's in IT, Cybersecurity, or related field (certifications can substitute)",
+                certifications: ["Security+", "CySA+", "GCIH", "CEH"],
+                dayToDay: ["Monitor security alerts", "Investigate incidents", "Document findings", "Coordinate with teams", "Update security rules"],
+                careerPath: "SOC Analyst Tier 1 → Tier 2 → Tier 3 → SOC Manager",
+                industries: ["All sectors", "MSPs", "Financial Services", "Healthcare"],
+                remote: "Medium",
+                demand: "Very High"
+            },
+            {
+                id: 3,
+                title: "Cloud Security Engineer",
+                salary: "$100,000 - $180,000",
+                salaryMin: 100000,
+                description: "Secure cloud infrastructure and applications on platforms like AWS, Azure, and Google Cloud. Design and implement security controls for cloud environments.",
+                skills: ["AWS/Azure/GCP", "Cloud Architecture", "IAM", "Container Security", "DevSecOps"],
+                difficulty: "intermediate",
+                type: ["defensive", "technical", "design"],
+                education: "Bachelor's in Computer Science, Cloud Computing, or related field",
+                certifications: ["AWS Certified Security", "Azure Security Engineer", "CCSP", "CKS"],
+                dayToDay: ["Design cloud security architecture", "Implement IAM policies", "Monitor cloud infrastructure", "Automate security controls", "Conduct security reviews"],
+                careerPath: "Cloud Engineer → Cloud Security Engineer → Senior Cloud Security → Cloud Security Architect",
+                industries: ["Technology", "E-commerce", "SaaS", "Financial Services"],
+                remote: "Very High",
+                demand: "Extremely High"
+            },
+            {
+                id: 4,
+                title: "Incident Response Specialist",
+                salary: "$80,000 - $140,000",
+                salaryMin: 80000,
+                description: "Lead incident response when security breaches occur. Investigate incidents, contain threats, and help organizations recover from cyber attacks.",
+                skills: ["Digital Forensics", "Malware Analysis", "Threat Intelligence", "Crisis Management", "DFIR Tools"],
+                difficulty: "intermediate",
+                type: ["defensive", "technical", "problem-solving"],
+                education: "Bachelor's in Cybersecurity, Computer Science, or Digital Forensics",
+                certifications: ["GCIH", "GCFA", "CHFI", "CREA"],
+                dayToDay: ["Respond to security incidents", "Perform forensic analysis", "Contain and eradicate threats", "Write incident reports", "Improve response procedures"],
+                careerPath: "SOC Analyst → IR Analyst → IR Specialist → IR Team Lead → CISO",
+                industries: ["Consulting", "Financial Services", "Healthcare", "Government"],
+                remote: "Medium",
+                demand: "Very High"
+            },
+            {
+                id: 5,
+                title: "Application Security Engineer",
+                salary: "$90,000 - $160,000",
+                salaryMin: 90000,
+                description: "Secure software applications throughout the development lifecycle. Find and fix vulnerabilities in code before deployment.",
+                skills: ["Secure Coding", "OWASP", "Code Review", "Threat Modeling", "Web Security"],
+                difficulty: "intermediate",
+                type: ["defensive", "technical", "development"],
+                education: "Bachelor's in Computer Science, Software Engineering, or related field",
+                certifications: ["CSSLP", "CEH", "GWAPT", "OSWE"],
+                dayToDay: ["Review code for vulnerabilities", "Perform security testing", "Create threat models", "Train developers", "Implement security tools"],
+                careerPath: "Developer → AppSec Engineer → Senior AppSec → AppSec Architect",
+                industries: ["Software Development", "SaaS", "Financial Services", "E-commerce"],
+                remote: "Very High",
+                demand: "Very High"
+            },
+            {
+                id: 6,
+                title: "Security Consultant",
+                salary: "$85,000 - $170,000",
+                salaryMin: 85000,
+                description: "Advise organizations on security strategies and best practices. Work with diverse clients to improve their security posture.",
+                skills: ["Risk Assessment", "Compliance", "Communication", "Frameworks", "Project Management"],
+                difficulty: "advanced",
+                type: ["advisory", "strategic", "business"],
+                education: "Bachelor's in Cybersecurity, Business, or related field; MBA preferred",
+                certifications: ["CISSP", "CISM", "CRISC", "ISO 27001 Lead Auditor"],
+                dayToDay: ["Assess client security", "Develop recommendations", "Present to executives", "Manage projects", "Write compliance reports"],
+                careerPath: "Security Analyst → Consultant → Senior Consultant → Principal Consultant",
+                industries: ["Consulting Firms", "All sectors", "Professional Services"],
+                remote: "High",
+                demand: "High"
+            },
+            {
+                id: 7,
+                title: "Network Security Engineer",
+                salary: "$80,000 - $140,000",
+                salaryMin: 80000,
+                description: "Design and maintain secure network infrastructure. Implement firewalls, VPNs, and intrusion detection systems.",
+                skills: ["Networking", "Firewalls", "VPN", "IDS/IPS", "Network Protocols"],
+                difficulty: "intermediate",
+                type: ["defensive", "technical", "infrastructure"],
+                education: "Bachelor's in Network Engineering, IT, or Cybersecurity",
+                certifications: ["CCNA Security", "CCNP Security", "Fortinet NSE", "Palo Alto PCNSE"],
+                dayToDay: ["Configure network security devices", "Monitor network traffic", "Troubleshoot issues", "Implement security policies", "Update firmware"],
+                careerPath: "Network Admin → Network Security Engineer → Senior Engineer → Network Architect",
+                industries: ["Enterprise", "MSPs", "Telecommunications", "Financial Services"],
+                remote: "Medium",
+                demand: "High"
+            },
+            {
+                id: 8,
+                title: "Malware Analyst",
+                salary: "$75,000 - $135,000",
+                salaryMin: 75000,
+                description: "Reverse engineer malicious software to understand how it works. Help develop defenses against new threats.",
+                skills: ["Reverse Engineering", "Assembly", "Debugging", "Analysis Tools", "Threat Research"],
+                difficulty: "advanced",
+                type: ["technical", "research", "analytical"],
+                education: "Bachelor's in Computer Science, Computer Engineering, or Cybersecurity",
+                certifications: ["GREM", "GCFA", "GCIA", "Practical Malware Analysis"],
+                dayToDay: ["Analyze malware samples", "Document behavior", "Create detection signatures", "Research threat actors", "Share intelligence"],
+                careerPath: "SOC Analyst → Malware Analyst → Senior Analyst → Threat Research Lead",
+                industries: ["Security Vendors", "Government", "Financial Services", "Research"],
+                remote: "High",
+                demand: "High"
+            },
+            {
+                id: 9,
+                title: "Security Architect",
+                salary: "$120,000 - $200,000",
+                salaryMin: 120000,
+                description: "Design comprehensive security frameworks for entire organizations. Lead strategic security initiatives and mentor junior staff.",
+                skills: ["System Design", "Frameworks", "Enterprise Security", "Leadership", "Zero Trust"],
+                difficulty: "advanced",
+                type: ["strategic", "design", "leadership"],
+                education: "Bachelor's or Master's in Cybersecurity, Computer Science, or related field",
+                certifications: ["CISSP", "SABSA", "TOGAF", "CCSP"],
+                dayToDay: ["Design security architecture", "Review security designs", "Lead projects", "Mentor teams", "Present to leadership"],
+                careerPath: "Security Engineer → Senior Engineer → Architect → Principal Architect → CISO",
+                industries: ["Enterprise", "Technology", "Financial Services", "Healthcare"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 10,
+                title: "GRC Analyst",
+                salary: "$65,000 - $120,000",
+                salaryMin: 65000,
+                description: "Ensure organizations meet security compliance requirements. Manage risk assessments and security policies.",
+                skills: ["Compliance", "Risk Management", "Policy Development", "Auditing", "NIST/ISO"],
+                difficulty: "entry",
+                type: ["advisory", "regulatory", "documentation"],
+                education: "Bachelor's in IT, Business, Cybersecurity, or related field",
+                certifications: ["CRISC", "CISA", "CGEIT", "ISO 27001 LA"],
+                dayToDay: ["Conduct risk assessments", "Manage compliance audits", "Update policies", "Train staff", "Report to management"],
+                careerPath: "GRC Analyst → Senior Analyst → GRC Manager → Director of Compliance",
+                industries: ["All sectors", "Healthcare", "Financial Services", "Government"],
+                remote: "High",
+                demand: "High"
+            },
+            {
+                id: 11,
+                title: "Threat Intelligence Analyst",
+                salary: "$70,000 - $130,000",
+                salaryMin: 70000,
+                description: "Research and analyze cyber threats to predict and prevent attacks. Stay ahead of emerging threats and adversary tactics.",
+                skills: ["Threat Research", "OSINT", "Threat Hunting", "Intelligence Platforms", "Reporting"],
+                difficulty: "intermediate",
+                type: ["research", "analytical", "strategic"],
+                education: "Bachelor's in Cybersecurity, Intelligence, or Computer Science",
+                certifications: ["GCTI", "GCIA", "CEH", "CTIA"],
+                dayToDay: ["Collect threat intelligence", "Analyze threat actors", "Create intelligence reports", "Share IOCs", "Brief stakeholders"],
+                careerPath: "SOC Analyst → Threat Intel Analyst → Senior Analyst → Threat Intel Manager",
+                industries: ["Government", "Defense", "Financial Services", "Technology"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 12,
+                title: "DevSecOps Engineer",
+                salary: "$95,000 - $165,000",
+                salaryMin: 95000,
+                description: "Integrate security into the DevOps pipeline. Automate security testing and ensure secure continuous deployment.",
+                skills: ["CI/CD", "Automation", "Docker/Kubernetes", "Security Testing", "IaC"],
+                difficulty: "intermediate",
+                type: ["technical", "development", "automation"],
+                education: "Bachelor's in Computer Science, Software Engineering, or IT",
+                certifications: ["AWS DevOps", "CKS", "GIAC GDEV", "Docker Certified"],
+                dayToDay: ["Automate security testing", "Integrate security tools", "Build CI/CD pipelines", "Container security", "Train developers"],
+                careerPath: "DevOps Engineer → DevSecOps Engineer → Senior DevSecOps → DevSecOps Architect",
+                industries: ["Technology", "SaaS", "Financial Services", "E-commerce"],
+                remote: "Very High",
+                demand: "Extremely High"
+            },
+            {
+                id: 13,
+                title: "Forensics Investigator",
+                salary: "$70,000 - $130,000",
+                salaryMin: 70000,
+                description: "Investigate cyber crimes and security incidents. Collect and analyze digital evidence for legal proceedings.",
+                skills: ["Digital Forensics", "Evidence Collection", "Legal Procedures", "Analysis Tools", "Report Writing"],
+                difficulty: "intermediate",
+                type: ["technical", "analytical", "legal"],
+                education: "Bachelor's in Digital Forensics, Cybersecurity, or Criminal Justice",
+                certifications: ["EnCE", "GCFA", "GCFE", "CHFI"],
+                dayToDay: ["Collect digital evidence", "Analyze artifacts", "Document findings", "Testify in court", "Preserve chain of custody"],
+                careerPath: "IT Support → Forensics Analyst → Senior Investigator → Forensics Manager",
+                industries: ["Law Enforcement", "Legal", "Consulting", "Government"],
+                remote: "Low",
+                demand: "Medium"
+            },
+            {
+                id: 14,
+                title: "Security Awareness Training Specialist",
+                salary: "$60,000 - $110,000",
+                salaryMin: 60000,
+                description: "Develop and deliver security awareness programs. Educate employees about security best practices and threats.",
+                skills: ["Training Development", "Communication", "Social Engineering", "Psychology", "Content Creation"],
+                difficulty: "entry",
+                type: ["advisory", "education", "business"],
+                education: "Bachelor's in Cybersecurity, Communications, Education, or related field",
+                certifications: ["Security+", "CISSP", "SSAP", "Training Certifications"],
+                dayToDay: ["Create training content", "Conduct workshops", "Run phishing simulations", "Measure effectiveness", "Update programs"],
+                careerPath: "IT Training → Security Awareness → Senior Specialist → Security Culture Manager",
+                industries: ["All sectors", "Consulting", "Education", "Large Enterprises"],
+                remote: "Medium",
+                demand: "Medium"
+            },
+            {
+                id: 15,
+                title: "Identity and Access Management Engineer",
+                salary: "$85,000 - $145,000",
+                salaryMin: 85000,
+                description: "Manage user identities and access controls across systems. Implement authentication and authorization solutions.",
+                skills: ["IAM Solutions", "Active Directory", "SSO", "MFA", "Access Control"],
+                difficulty: "intermediate",
+                type: ["technical", "infrastructure", "security"],
+                education: "Bachelor's in IT, Computer Science, or Cybersecurity",
+                certifications: ["Okta Certified", "Azure AD", "CISSP", "CyberArk"],
+                dayToDay: ["Manage IAM systems", "Configure access policies", "Implement SSO", "Audit access rights", "Troubleshoot issues"],
+                careerPath: "System Admin → IAM Engineer → Senior IAM Engineer → IAM Architect",
+                industries: ["Enterprise", "Financial Services", "Healthcare", "Technology"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 16,
+                title: "Cryptographer",
+                salary: "$100,000 - $170,000",
+                salaryMin: 100000,
+                description: "Design and analyze cryptographic systems. Develop encryption algorithms and secure communication protocols.",
+                skills: ["Mathematics", "Cryptography", "Algorithm Design", "Programming", "Security Protocols"],
+                difficulty: "advanced",
+                type: ["research", "technical", "theoretical"],
+                education: "Master's or PhD in Mathematics, Computer Science, or Cryptography",
+                certifications: ["Research publications", "CISSP", "Academic credentials"],
+                dayToDay: ["Design crypto systems", "Analyze algorithms", "Research vulnerabilities", "Implement protocols", "Publish findings"],
+                careerPath: "Security Engineer → Cryptographer → Senior Cryptographer → Lead Researcher",
+                industries: ["Research", "Government", "Defense", "Financial Services"],
+                remote: "Medium",
+                demand: "Medium"
+            },
+            {
+                id: 17,
+                title: "IoT Security Specialist",
+                salary: "$80,000 - $140,000",
+                salaryMin: 80000,
+                description: "Secure Internet of Things devices and networks. Address unique challenges in embedded systems and connected devices.",
+                skills: ["IoT Protocols", "Embedded Systems", "Network Security", "Firmware Analysis", "Hardware Security"],
+                difficulty: "intermediate",
+                type: ["technical", "specialized", "emerging"],
+                education: "Bachelor's in Computer Engineering, Electrical Engineering, or Cybersecurity",
+                certifications: ["IoT Security Foundation", "CEH", "GIAC GICSP"],
+                dayToDay: ["Assess IoT devices", "Perform firmware analysis", "Design secure architectures", "Test for vulnerabilities", "Create security standards"],
+                careerPath: "Embedded Engineer → IoT Security → Senior Specialist → IoT Security Architect",
+                industries: ["Manufacturing", "Smart Home", "Healthcare", "Automotive"],
+                remote: "Medium",
+                demand: "High"
+            },
+            {
+                id: 18,
+                title: "Blockchain Security Engineer",
+                salary: "$110,000 - $190,000",
+                salaryMin: 110000,
+                description: "Secure blockchain implementations and smart contracts. Audit cryptocurrency systems and DeFi protocols.",
+                skills: ["Blockchain", "Smart Contracts", "Solidity", "Cryptography", "Security Auditing"],
+                difficulty: "advanced",
+                type: ["technical", "specialized", "emerging"],
+                education: "Bachelor's in Computer Science, Cryptography, or related field",
+                certifications: ["Certified Blockchain Security Professional", "CEH", "Smart Contract Auditor"],
+                dayToDay: ["Audit smart contracts", "Test blockchain security", "Review protocols", "Identify vulnerabilities", "Recommend fixes"],
+                careerPath: "Developer → Blockchain Developer → Security Engineer → Lead Auditor",
+                industries: ["Cryptocurrency", "DeFi", "Web3", "Financial Services"],
+                remote: "Very High",
+                demand: "High"
+            },
+            {
+                id: 19,
+                title: "Red Team Operator",
+                salary: "$90,000 - $160,000",
+                salaryMin: 90000,
+                description: "Simulate advanced persistent threats to test organizational defenses. Conduct full-scope security assessments.",
+                skills: ["Advanced Pentesting", "Social Engineering", "Physical Security", "C2 Frameworks", "Exploit Development"],
+                difficulty: "advanced",
+                type: ["offensive", "advanced", "hands-on"],
+                education: "Bachelor's in Cybersecurity, Computer Science (experience often more important)",
+                certifications: ["OSCP", "OSCE", "OSEP", "CRTO"],
+                dayToDay: ["Plan red team operations", "Execute attacks", "Evade detection", "Document TTPs", "Debrief blue team"],
+                careerPath: "Pentester → Red Team Member → Senior Operator → Red Team Lead",
+                industries: ["Consulting", "Government", "Defense", "Large Enterprises"],
+                remote: "Medium",
+                demand: "High"
+            },
+            {
+                id: 20,
+                title: "Blue Team Analyst",
+                salary: "$70,000 - $125,000",
+                salaryMin: 70000,
+                description: "Defend against attacks by monitoring, detecting, and responding to threats. Strengthen defensive capabilities.",
+                skills: ["Threat Detection", "SIEM", "Network Defense", "Log Analysis", "Incident Response"],
+                difficulty: "intermediate",
+                type: ["defensive", "technical", "monitoring"],
+                education: "Bachelor's in Cybersecurity, IT, or Computer Science",
+                certifications: ["CySA+", "GCIH", "GCIA", "BTL1"],
+                dayToDay: ["Monitor for threats", "Analyze attacks", "Implement defenses", "Tune detection rules", "Coordinate with teams"],
+                careerPath: "SOC Analyst → Blue Team Analyst → Senior Analyst → Blue Team Lead",
+                industries: ["All sectors", "Government", "Financial Services", "Healthcare"],
+                remote: "Medium",
+                demand: "Very High"
+            },
+            {
+                id: 21,
+                title: "Purple Team Engineer",
+                salary: "$95,000 - $155,000",
+                salaryMin: 95000,
+                description: "Bridge offensive and defensive security by facilitating red and blue team collaboration.",
+                skills: ["Offensive Security", "Defensive Security", "Testing Frameworks", "Collaboration", "Security Tools"],
+                difficulty: "advanced",
+                type: ["offensive", "defensive", "collaborative"],
+                education: "Bachelor's in Cybersecurity, Computer Science",
+                certifications: ["OSCP", "GCIH", "CySA+", "Purple Team certified"],
+                dayToDay: ["Coordinate exercises", "Test detections", "Facilitate learning", "Document findings", "Improve security"],
+                careerPath: "SOC/Pentester → Purple Team → Senior Engineer → Security Program Manager",
+                industries: ["Large Enterprises", "Consulting", "Financial Services", "Technology"],
+                remote: "High",
+                demand: "Medium"
+            },
+            {
+                id: 22,
+                title: "Security Automation Engineer",
+                salary: "$90,000 - $150,000",
+                salaryMin: 90000,
+                description: "Automate security operations and response workflows. Build tools to improve security efficiency.",
+                skills: ["Python", "API Integration", "SOAR", "Automation", "Scripting"],
+                difficulty: "intermediate",
+                type: ["technical", "development", "automation"],
+                education: "Bachelor's in Computer Science, IT, or Cybersecurity",
+                certifications: ["Python certifications", "Security+", "AWS", "Splunk SOAR"],
+                dayToDay: ["Build automation scripts", "Integrate security tools", "Develop SOAR playbooks", "Optimize workflows", "Maintain systems"],
+                careerPath: "SOC Analyst → Automation Engineer → Senior Engineer → Security Engineering Manager",
+                industries: ["Technology", "Financial Services", "Large Enterprises", "MSPs"],
+                remote: "Very High",
+                demand: "Very High"
+            },
+            {
+                id: 23,
+                title: "CISO (Chief Information Security Officer)",
+                salary: "$150,000 - $350,000+",
+                salaryMin: 150000,
+                description: "Lead organizational security strategy and programs. Report to executive leadership on security posture.",
+                skills: ["Leadership", "Strategy", "Risk Management", "Communication", "Business Acumen"],
+                difficulty: "advanced",
+                type: ["leadership", "strategic", "executive"],
+                education: "Bachelor's required, Master's or MBA preferred",
+                certifications: ["CISSP", "CISM", "CRISC", "Executive education"],
+                dayToDay: ["Set security strategy", "Manage budget", "Present to board", "Lead teams", "Manage risk"],
+                careerPath: "Security Analyst → Manager → Director → VP → CISO",
+                industries: ["All sectors", "Enterprise", "Fortune 500", "Government"],
+                remote: "Low",
+                demand: "High"
+            },
+            {
+                id: 24,
+                title: "Security Product Manager",
+                salary: "$100,000 - $170,000",
+                salaryMin: 100000,
+                description: "Manage security product development and roadmap. Bridge technical teams and business objectives.",
+                skills: ["Product Management", "Technical Knowledge", "Market Analysis", "Communication", "Agile"],
+                difficulty: "advanced",
+                type: ["business", "strategic", "technical"],
+                education: "Bachelor's in Business, Computer Science, or related field",
+                certifications: ["Product Management", "CISSP", "Agile certifications"],
+                dayToDay: ["Define product roadmap", "Gather requirements", "Coordinate teams", "Analyze market", "Launch products"],
+                careerPath: "Engineer → Technical PM → Product Manager → Senior PM → Director of Product",
+                industries: ["Security Vendors", "Technology", "SaaS", "Startups"],
+                remote: "High",
+                demand: "Medium"
+            },
+            {
+                id: 25,
+                title: "Security Researcher",
+                salary: "$85,000 - $160,000",
+                salaryMin: 85000,
+                description: "Discover new vulnerabilities and attack techniques. Contribute to security community knowledge.",
+                skills: ["Vulnerability Research", "Exploit Development", "Reverse Engineering", "Programming", "Technical Writing"],
+                difficulty: "advanced",
+                type: ["research", "technical", "innovative"],
+                education: "Bachelor's or Master's in Computer Science, Cybersecurity",
+                certifications: ["OSCP", "OSCE", "Published CVEs", "Conference speaking"],
+                dayToDay: ["Research vulnerabilities", "Develop exploits", "Write reports", "Present findings", "Coordinate disclosures"],
+                careerPath: "Security Engineer → Researcher → Senior Researcher → Principal Researcher",
+                industries: ["Security Vendors", "Bug Bounty", "Academia", "Government"],
+                remote: "Very High",
+                demand: "Medium"
+            },
+            {
+                id: 26,
+                title: "Vulnerability Management Analyst",
+                salary: "$65,000 - $115,000",
+                salaryMin: 65000,
+                description: "Identify, assess, and prioritize vulnerabilities across organizational assets. Coordinate remediation efforts.",
+                skills: ["Vulnerability Scanning", "Risk Assessment", "Patch Management", "Reporting", "Coordination"],
+                difficulty: "entry",
+                type: ["technical", "analytical", "process"],
+                education: "Bachelor's in IT, Cybersecurity, or related field",
+                certifications: ["Security+", "CySA+", "CEH", "Qualys/Nessus certs"],
+                dayToDay: ["Run vulnerability scans", "Assess findings", "Prioritize risks", "Track remediation", "Report metrics"],
+                careerPath: "IT Support → Vuln Analyst → Senior Analyst → Vulnerability Manager",
+                industries: ["All sectors", "Healthcare", "Financial Services", "Government"],
+                remote: "High",
+                demand: "High"
+            },
+            {
+                id: 27,
+                title: "Privacy Officer",
+                salary: "$80,000 - $140,000",
+                salaryMin: 80000,
+                description: "Ensure compliance with data privacy regulations. Protect customer and employee privacy rights.",
+                skills: ["Privacy Law", "GDPR", "CCPA", "Data Protection", "Compliance"],
+                difficulty: "intermediate",
+                type: ["regulatory", "legal", "advisory"],
+                education: "Bachelor's in Law, IT, Business, or related field",
+                certifications: ["CIPP", "CIPM", "CIPT", "FIP"],
+                dayToDay: ["Assess privacy risks", "Develop policies", "Handle data requests", "Train staff", "Manage compliance"],
+                careerPath: "Compliance Analyst → Privacy Analyst → Privacy Officer → Chief Privacy Officer",
+                industries: ["Healthcare", "Technology", "Financial Services", "Retail"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 28,
+                title: "Security Data Analyst",
+                salary: "$75,000 - $130,000",
+                salaryMin: 75000,
+                description: "Analyze security data to identify patterns and improve defenses. Build metrics and dashboards.",
+                skills: ["Data Analysis", "SQL", "Python", "Visualization", "Statistics"],
+                difficulty: "intermediate",
+                type: ["analytical", "technical", "metrics"],
+                education: "Bachelor's in Data Science, Cybersecurity, or Computer Science",
+                certifications: ["Security+", "Data Analytics certs", "Splunk", "PowerBI"],
+                dayToDay: ["Analyze security data", "Create dashboards", "Identify trends", "Generate reports", "Improve metrics"],
+                careerPath: "Data Analyst → Security Data Analyst → Senior Analyst → Security Analytics Manager",
+                industries: ["Technology", "Financial Services", "Large Enterprises", "Government"],
+                remote: "Very High",
+                demand: "High"
+            },
+            {
+                id: 29,
+                title: "OT/ICS Security Specialist",
+                salary: "$90,000 - $155,000",
+                salaryMin: 90000,
+                description: "Secure operational technology and industrial control systems in critical infrastructure.",
+                skills: ["SCADA", "ICS Protocols", "OT Networks", "Industrial Security", "Risk Assessment"],
+                difficulty: "advanced",
+                type: ["specialized", "technical", "infrastructure"],
+                education: "Bachelor's in Engineering, Computer Science, or Cybersecurity",
+                certifications: ["GICSP", "ISA Security", "ICS410", "OT specific"],
+                dayToDay: ["Assess OT systems", "Design security controls", "Monitor ICS networks", "Coordinate with operations", "Incident response"],
+                careerPath: "OT Engineer → OT Security → Senior Specialist → OT Security Manager",
+                industries: ["Energy", "Manufacturing", "Utilities", "Critical Infrastructure"],
+                remote: "Low",
+                demand: "High"
+            },
+            {
+                id: 30,
+                title: "Mobile Security Engineer",
+                salary: "$85,000 - $145,000",
+                salaryMin: 85000,
+                description: "Secure mobile applications and devices. Test iOS and Android apps for vulnerabilities.",
+                skills: ["iOS/Android", "Mobile Security", "App Analysis", "Reverse Engineering", "Secure Development"],
+                difficulty: "intermediate",
+                type: ["technical", "specialized", "testing"],
+                education: "Bachelor's in Computer Science, Mobile Development, or Cybersecurity",
+                certifications: ["Mobile Security Certified", "CEH", "iOS/Android certs"],
+                dayToDay: ["Test mobile apps", "Perform code review", "Analyze app security", "Advise developers", "Research threats"],
+                careerPath: "Mobile Developer → Mobile Security → Senior Engineer → Mobile Security Lead",
+                industries: ["Mobile Apps", "Financial Services", "Healthcare", "E-commerce"],
+                remote: "Very High",
+                demand: "Medium"
+            },
+            {
+                id: 31,
+                title: "Security Engineer",
+                salary: "$80,000 - $140,000",
+                salaryMin: 80000,
+                description: "Implement and maintain security controls across systems and networks. General security engineering role.",
+                skills: ["Security Tools", "System Hardening", "Networking", "Scripting", "Troubleshooting"],
+                difficulty: "intermediate",
+                type: ["technical", "infrastructure", "defensive"],
+                education: "Bachelor's in Computer Science, IT, or Cybersecurity",
+                certifications: ["Security+", "SSCP", "GSEC", "CEH"],
+                dayToDay: ["Implement security controls", "Maintain security tools", "Respond to issues", "Update systems", "Document processes"],
+                careerPath: "IT Support → Security Engineer → Senior Engineer → Security Architect",
+                industries: ["All sectors", "Technology", "Financial Services", "Healthcare"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 32,
+                title: "Threat Hunter",
+                salary: "$85,000 - $145,000",
+                salaryMin: 85000,
+                description: "Proactively search for threats that evade automated detection systems. Hunt for advanced adversaries.",
+                skills: ["Threat Hunting", "SIEM", "Threat Intelligence", "Analysis", "Scripting"],
+                difficulty: "advanced",
+                type: ["analytical", "proactive", "technical"],
+                education: "Bachelor's in Cybersecurity, Computer Science",
+                certifications: ["GCTI", "GCIH", "Threat Hunting certs", "CySA+"],
+                dayToDay: ["Develop hunt hypotheses", "Analyze network data", "Investigate anomalies", "Document TTPs", "Share findings"],
+                careerPath: "SOC Analyst → Threat Hunter → Senior Hunter → Threat Hunting Manager",
+                industries: ["Large Enterprises", "Financial Services", "Government", "Technology"],
+                remote: "High",
+                demand: "Very High"
+            },
+            {
+                id: 33,
+                title: "Security Operations Manager",
+                salary: "$100,000 - $160,000",
+                salaryMin: 100000,
+                description: "Manage security operations center and incident response teams. Lead 24/7 security monitoring.",
+                skills: ["Leadership", "SOC Operations", "Incident Response", "Process Improvement", "Metrics"],
+                difficulty: "advanced",
+                type: ["leadership", "management", "operational"],
+                education: "Bachelor's in Cybersecurity, IT, or related field",
+                certifications: ["CISSP", "CISM", "GIAC", "Management training"],
+                dayToDay: ["Manage SOC team", "Oversee incidents", "Report to executives", "Improve processes", "Manage budget"],
+                careerPath: "SOC Analyst → SOC Lead → Manager → Director → CISO",
+                industries: ["All sectors", "MSPs", "Large Enterprises", "Financial Services"],
+                remote: "Medium",
+                demand: "High"
+            },
+            {
+                id: 34,
+                title: "AI/ML Security Specialist",
+                salary: "$110,000 - $180,000",
+                salaryMin: 110000,
+                description: "Secure artificial intelligence and machine learning systems. Address adversarial attacks and model poisoning.",
+                skills: ["Machine Learning", "AI Security", "Python", "Adversarial ML", "Model Security"],
+                difficulty: "advanced",
+                type: ["specialized", "emerging", "technical"],
+                education: "Master's in AI, ML, Computer Science, or Cybersecurity",
+                certifications: ["ML certifications", "Research credentials", "Security+"],
+                dayToDay: ["Test AI/ML models", "Assess vulnerabilities", "Design secure systems", "Research attacks", "Advise teams"],
+                careerPath: "Data Scientist → ML Engineer → AI Security → Senior Specialist → Research Lead",
+                industries: ["Technology", "Research", "Autonomous Systems", "Financial Services"],
+                remote: "Very High",
+                demand: "High"
+            },
+            {
+                id: 35,
+                title: "Bug Bounty Hunter",
+                salary: "$40,000 - $200,000+ (Variable)",
+                salaryMin: 40000,
+                description: "Find and report vulnerabilities in software and systems through bug bounty programs. Freelance security testing.",
+                skills: ["Web Security", "Mobile Security", "API Testing", "Networking", "Multiple Platforms"],
+                difficulty: "intermediate",
+                type: ["offensive", "freelance", "independent"],
+                education: "Self-taught or Bachelor's in Computer Science (varies greatly)",
+                certifications: ["OSCP", "CEH", "Bug Bounty certifications", "Platform reputation"],
+                dayToDay: ["Test targets", "Write reports", "Submit findings", "Research techniques", "Build reputation"],
+                careerPath: "Self-taught → Bug Bounty → Senior Hunter → Security Researcher/Consultant",
+                industries: ["Freelance", "All sectors", "Bug Bounty Platforms"],
+                remote: "Very High",
+                demand: "Medium"
+            }
+        ];
+
+        const quizQuestions = [
+            {
+                question: "What type of work environment excites you most?",
+                options: [
+                    { text: "Fast-paced, responding to active threats", value: "defensive" },
+                    { text: "Strategic planning and long-term projects", value: "strategic" },
+                    { text: "Hands-on technical problem-solving", value: "technical" },
+                    { text: "Working with people and advising clients", value: "advisory" }
+                ]
+            },
+            {
+                question: "Which activity sounds most interesting to you?",
+                options: [
+                    { text: "Breaking into systems legally to find weaknesses", value: "offensive" },
+                    { text: "Monitoring systems and catching attackers", value: "monitoring" },
+                    { text: "Building secure applications and infrastructure", value: "design" },
+                    { text: "Researching new threats and attack methods", value: "research" }
+                ]
+            },
+            {
+                question: "How do you prefer to learn new skills?",
+                options: [
+                    { text: "Hands-on practice and experimentation", value: "hands-on" },
+                    { text: "Reading research papers and documentation", value: "analytical" },
+                    { text: "Working on real projects with guidance", value: "practical" },
+                    { text: "Structured courses and certifications", value: "structured" }
+                ]
+            },
+            {
+                question: "What's your comfort level with programming?",
+                options: [
+                    { text: "I love coding and want to do it daily", value: "development" },
+                    { text: "I can code and enjoy scripting tasks", value: "technical" },
+                    { text: "I prefer minimal coding, more strategy", value: "strategic" },
+                    { text: "I'm interested in learning but new to it", value: "entry" }
+                ]
+            },
+            {
+                question: "Which best describes your ideal workday?",
+                options: [
+                    { text: "Solving complex technical puzzles", value: "problem-solving" },
+                    { text: "Communicating with teams and stakeholders", value: "business" },
+                    { text: "Deep focus work on challenging projects", value: "analytical" },
+                    { text: "Variety - different tasks throughout the day", value: "diverse" }
+                ]
+            },
+            {
+                question: "What's your preferred work style?",
+                options: [
+                    { text: "Independent work with minimal supervision", value: "independent" },
+                    { text: "Collaborative team environment", value: "collaborative" },
+                    { text: "Leading and mentoring others", value: "leadership" },
+                    { text: "Mix of solo and team work", value: "balanced" }
+                ]
+            },
+            {
+                question: "Which area interests you most?",
+                options: [
+                    { text: "Attacking and finding vulnerabilities", value: "offensive" },
+                    { text: "Defending and protecting systems", value: "defensive" },
+                    { text: "Compliance and governance", value: "regulatory" },
+                    { text: "Emerging technologies (AI, blockchain, IoT)", value: "emerging" }
+                ]
+            },
+            {
+                question: "What motivates you most in a career?",
+                options: [
+                    { text: "High salary and compensation", value: "salary" },
+                    { text: "Cutting-edge technology and innovation", value: "innovation" },
+                    { text: "Job stability and clear career path", value: "stability" },
+                    { text: "Flexibility and remote work options", value: "flexibility" }
+                ]
+            }
+        ];
+
+        const resources = {
+            certifications: [
+                {
+                    name: "CompTIA Security+",
+                    provider: "CompTIA",
+                    level: "Entry",
+                    cost: "$370",
+                    description: "Foundational security certification covering essential security concepts and practices.",
+                    url: "https://www.comptia.org/certifications/security",
+                    careers: ["SOC Analyst", "Security Engineer", "GRC Analyst"]
+                },
+                {
+                    name: "CEH (Certified Ethical Hacker)",
+                    provider: "EC-Council",
+                    level: "Intermediate",
+                    cost: "$950",
+                    description: "Covers ethical hacking techniques and penetration testing methodologies.",
+                    url: "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/",
+                    careers: ["Penetration Tester", "Security Analyst"]
+                },
+                {
+                    name: "CISSP",
+                    provider: "ISC2",
+                    level: "Advanced",
+                    cost: "$749",
+                    description: "Premier security certification for experienced professionals. Requires 5 years experience.",
+                    url: "https://www.isc2.org/Certifications/CISSP",
+                    careers: ["Security Architect", "CISO", "Security Consultant"]
+                },
+                {
+                    name: "OSCP",
+                    provider: "Offensive Security",
+                    level: "Advanced",
+                    cost: "$1,649",
+                    description: "Hands-on penetration testing certification with 24-hour practical exam.",
+                    url: "https://www.offensive-security.com/pwk-oscp/",
+                    careers: ["Penetration Tester", "Red Team Operator"]
+                },
+                {
+                    name: "AWS Certified Security Specialty",
+                    provider: "Amazon",
+                    level: "Intermediate",
+                    cost: "$300",
+                    description: "Validates expertise in securing AWS environments.",
+                    url: "https://aws.amazon.com/certification/certified-security-specialty/",
+                    careers: ["Cloud Security Engineer", "DevSecOps"]
+                },
+                {
+                    name: "GCIH",
+                    provider: "GIAC/SANS",
+                    level: "Intermediate",
+                    cost: "$1,899",
+                    description: "Incident handling and response certification from SANS.",
+                    url: "https://www.giac.org/certifications/certified-incident-handler-gcih/",
+                    careers: ["Incident Response Specialist", "SOC Analyst"]
+                }
+            ],
+            courses: [
+                {
+                    name: "TryHackMe",
+                    provider: "TryHackMe",
+                    level: "All Levels",
+                    cost: "Free / $10/mo Premium",
+                    description: "Gamified cybersecurity learning platform with hands-on labs and guided paths.",
+                    url: "https://tryhackme.com",
+                    careers: ["All Security Roles"]
+                },
+                {
+                    name: "HackTheBox",
+                    provider: "HackTheBox",
+                    level: "Intermediate-Advanced",
+                    cost: "Free / $14/mo VIP",
+                    description: "Penetration testing labs and challenges for practical skills.",
+                    url: "https://www.hackthebox.com",
+                    careers: ["Penetration Tester", "Red Team"]
+                },
+                {
+                    name: "Cybrary",
+                    provider: "Cybrary",
+                    level: "All Levels",
+                    cost: "Free / $49/mo Insider Pro",
+                    description: "Comprehensive cybersecurity training courses and certification prep.",
+                    url: "https://www.cybrary.it",
+                    careers: ["All Security Roles"]
+                },
+                {
+                    name: "SANS Cyber Aces",
+                    provider: "SANS",
+                    level: "Entry-Intermediate",
+                    cost: "Free",
+                    description: "Free tutorials covering foundational cybersecurity concepts.",
+                    url: "https://www.cyberaces.org",
+                    careers: ["Entry-level roles"]
+                },
+                {
+                    name: "Coursera Cybersecurity Specialization",
+                    provider: "Coursera",
+                    level: "Entry-Intermediate",
+                    cost: "$49/mo",
+                    description: "University-level courses from top institutions.",
+                    url: "https://www.coursera.org/browse/information-technology/security",
+                    careers: ["All Security Roles"]
+                }
+            ],
+            platforms: [
+                {
+                    name: "PentesterLab",
+                    provider: "PentesterLab",
+                    level: "Intermediate-Advanced",
+                    cost: "$20/mo",
+                    description: "Hands-on web penetration testing exercises and courses.",
+                    url: "https://pentesterlab.com",
+                    careers: ["Penetration Tester", "Web Security"]
+                },
+                {
+                    name: "PortSwigger Web Security Academy",
+                    provider: "PortSwigger",
+                    level: "All Levels",
+                    cost: "Free",
+                    description: "Free web security training from the creators of Burp Suite.",
+                    url: "https://portswigger.net/web-security",
+                    careers: ["Application Security", "Penetration Tester"]
+                },
+                {
+                    name: "Blue Team Labs Online",
+                    provider: "BTLO",
+                    level: "Entry-Intermediate",
+                    cost: "Free / $15/mo",
+                    description: "Defensive security challenges and investigations.",
+                    url: "https://blueteamlabs.online",
+                    careers: ["SOC Analyst", "Blue Team", "Incident Response"]
+                },
+                {
+                    name: "CyberDefenders",
+                    provider: "CyberDefenders",
+                    level: "Intermediate-Advanced",
+                    cost: "Free",
+                    description: "Blue team CTF challenges and DFIR scenarios.",
+                    url: "https://cyberdefenders.org",
+                    careers: ["SOC Analyst", "Incident Response", "Forensics"]
+                },
+                {
+                    name: "LetsDefend",
+                    provider: "LetsDefend",
+                    level: "Entry-Intermediate",
+                    cost: "Free / $30/mo",
+                    description: "SOC analyst training with real-world incident scenarios.",
+                    url: "https://letsdefend.io",
+                    careers: ["SOC Analyst", "Incident Response"]
+                }
+            ],
+            books: [
+                {
+                    name: "The Web Application Hacker's Handbook",
+                    provider: "Dafydd Stuttard",
+                    level: "Intermediate",
+                    cost: "$50",
+                    description: "Comprehensive guide to web application security testing.",
+                    url: "https://www.wiley.com/en-us",
+                    careers: ["Application Security", "Penetration Tester"]
+                },
+                {
+                    name: "Practical Malware Analysis",
+                    provider: "Michael Sikorski",
+                    level: "Advanced",
+                    cost: "$60",
+                    description: "Hands-on guide to malware analysis and reverse engineering.",
+                    url: "https://nostarch.com",
+                    careers: ["Malware Analyst", "Incident Response"]
+                },
+                {
+                    name: "Blue Team Field Manual",
+                    provider: "Alan White",
+                    level: "All Levels",
+                    cost: "$15",
+                    description: "Quick reference guide for defensive security operations.",
+                    url: "https://www.amazon.com",
+                    careers: ["SOC Analyst", "Blue Team", "Incident Response"]
+                },
+                {
+                    name: "Operator Handbook",
+                    provider: "Joshua Picolet",
+                    level: "Intermediate-Advanced",
+                    cost: "$30",
+                    description: "Red team and penetration testing reference guide.",
+                    url: "https://www.amazon.com",
+                    careers: ["Penetration Tester", "Red Team"]
+                },
+                {
+                    name: "The Hacker Playbook 3",
+                    provider: "Peter Kim",
+                    level: "Intermediate",
+                    cost: "$40",
+                    description: "Practical guide to penetration testing methodologies.",
+                    url: "https://www.amazon.com",
+                    careers: ["Penetration Tester", "Red Team"]
+                }
+            ]
+        };
+
+        function getCareerTimeline(career, currentYear) {
+            const timelines = {
+                "High School": {
+                    year: "High School (Grades 9-12)",
+                    items: [
+                        {
+                            title: "Foundational Learning",
+                            description: "Build basic computer and networking skills",
+                            activities: [
+                                "Take computer science courses if available",
+                                "Learn basic programming (Python, JavaScript)",
+                                "Set up a home lab with VirtualBox/VMware",
+                                "Join cybersecurity clubs or competitions"
+                            ]
+                        },
+                        {
+                            title: "Entry Certifications",
+                            description: "Start with beginner-friendly certifications",
+                            activities: [
+                                "Study for CompTIA IT Fundamentals (ITF+)",
+                                "Consider TestOut PC Pro or similar",
+                                "Complete free online courses (Cybrary, Coursera)"
+                            ],
+                            certs: ["CompTIA ITF+"]
+                        },
+                        {
+                            title: "Practice Platforms",
+                            description: "Start with beginner CTF and practice",
+                            activities: [
+                                "Try TryHackMe beginner rooms",
+                                "Explore OverTheWire wargames",
+                                "Watch security YouTube channels",
+                                "Read security blogs and news"
+                            ]
+                        }
+                    ]
+                },
+                "Freshman": {
+                    year: "College Year 1 (Freshman)",
+                    items: [
+                        {
+                            title: "Academic Foundation",
+                            description: "Complete core CS and security coursework",
+                            activities: [
+                                "CS 101, Programming fundamentals",
+                                "Introduction to Cybersecurity",
+                                "Discrete Mathematics",
+                                "Networking fundamentals"
+                            ]
+                        },
+                        {
+                            title: "Self Study",
+                            description: "Begin structured self-learning",
+                            activities: [
+                                "Complete TryHackMe Pre-Security path",
+                                "Start CompTIA A+ preparation",
+                                "Learn Linux basics (Ubuntu/Kali)",
+                                "Join campus cybersecurity club"
+                            ]
+                        },
+                        {
+                            title: "First Certification",
+                            description: "Aim for foundational certification",
+                            activities: [
+                                "Study for and obtain CompTIA A+ (optional)",
+                                "Begin Security+ preparation"
+                            ],
+                            certs: ["CompTIA A+", "Start Security+"]
+                        }
+                    ]
+                },
+                "Sophomore": {
+                    year: "College Year 2 (Sophomore)",
+                    items: [
+                        {
+                            title: "Core Courses",
+                            description: "Dive deeper into security concepts",
+                            activities: [
+                                "Network Security course",
+                                "Operating Systems",
+                                "Database Systems",
+                                "Web Development/Security"
+                            ]
+                        },
+                        {
+                            title: "Key Certification",
+                            description: "Obtain industry-recognized certification",
+                            activities: [
+                                "Obtain CompTIA Security+ certification",
+                                "Start Network+ or Linux+ if needed",
+                                "Begin exploring specialization paths"
+                            ],
+                            certs: ["CompTIA Security+ (Required)", "Network+/Linux+ (Optional)"]
+                        },
+                        {
+                            title: "Practical Skills",
+                            description: "Build hands-on experience",
+                            activities: [
+                                "Complete TryHackMe Junior Penetration Tester path",
+                                "Set up personal home lab",
+                                "Participate in CTF competitions",
+                                "Start a security blog or GitHub portfolio"
+                            ]
+                        },
+                        {
+                            title: "First Internship",
+                            description: "Seek summer internship opportunities",
+                            activities: [
+                                "Apply for IT support or SOC internships",
+                                "Attend career fairs",
+                                "Network with alumni",
+                                "Update resume and LinkedIn"
+                            ]
+                        }
+                    ]
+                },
+                "Junior": {
+                    year: "College Year 3 (Junior)",
+                    items: [
+                        {
+                            title: "Specialization Courses",
+                            description: "Focus on career-specific courses",
+                            activities: career.difficulty === "entry" ? [
+                                "Defensive Security",
+                                "Incident Response",
+                                "Security Operations",
+                                "Compliance and Risk Management"
+                            ] : career.type.includes("offensive") ? [
+                                "Penetration Testing course",
+                                "Exploit Development",
+                                "Web Application Security",
+                                "Advanced Networking"
+                            ] : [
+                                "Advanced courses in specialization",
+                                "Electives aligned with career goals",
+                                "Capstone project planning",
+                                "Research opportunities"
+                            ]
+                        },
+                        {
+                            title: "Advanced Certifications",
+                            description: "Pursue role-specific certifications",
+                            activities: career.certifications.slice(0, 2).map(cert => `Study for ${cert}`),
+                            certs: career.certifications.slice(0, 2)
+                        },
+                        {
+                            title: "Major Internship",
+                            description: "Secure cybersecurity internship",
+                            activities: [
+                                "Apply 6 months in advance",
+                                "Target " + career.title + " or related roles",
+                                "Work on real-world projects",
+                                "Build professional network"
+                            ]
+                        },
+                        {
+                            title: "Portfolio Building",
+                            description: "Demonstrate skills publicly",
+                            activities: [
+                                "Contribute to open source security tools",
+                                "Write technical blog posts",
+                                "Present at security meetups",
+                                "Complete advanced HackTheBox machines"
+                            ]
+                        }
+                    ]
+                },
+                "Senior": {
+                    year: "College Year 4 (Senior)",
+                    items: [
+                        {
+                            title: "Final Courses",
+                            description: "Complete degree requirements",
+                            activities: [
+                                "Capstone project in " + career.title + " area",
+                                "Advanced electives",
+                                "Ethics and professional practice",
+                                "Senior seminars"
+                            ]
+                        },
+                        {
+                            title: "Professional Certifications",
+                            description: "Obtain career-critical certifications",
+                            activities: career.certifications.slice(0, 3).map(cert => `Obtain ${cert} certification`),
+                            certs: career.certifications.slice(0, 3)
+                        },
+                        {
+                            title: "Job Preparation",
+                            description: "Prepare for full-time employment",
+                            activities: [
+                                "Apply to " + career.title + " positions",
+                                "Practice technical interviews",
+                                "Attend security conferences",
+                                "Final portfolio polish",
+                                "Negotiate offers"
+                            ]
+                        },
+                        {
+                            title: "Advanced Skills",
+                            description: "Master specialized tools and techniques",
+                            activities: career.skills.map(skill => `Master ${skill}`)
+                        }
+                    ]
+                },
+                "Post-Grad": {
+                    year: "Post-Graduation (Years 1-3)",
+                    items: [
+                        {
+                            title: "Entry Role",
+                            description: "First professional position",
+                            activities: [
+                                "Start as " + (career.careerPath.split(" → ")[0] || career.title),
+                                "Learn organizational processes",
+                                "Build professional relationships",
+                                "Document achievements"
+                            ]
+                        },
+                        {
+                            title: "Continuous Learning",
+                            description: "Maintain and expand skills",
+                            activities: [
+                                "Renew/maintain certifications",
+                                "Pursue advanced certs: " + career.certifications.slice(2).join(", "),
+                                "Stay current with threats",
+                                "Attend training and conferences"
+                            ],
+                            certs: career.certifications.slice(2, 4)
+                        },
+                        {
+                            title: "Career Advancement",
+                            description: "Grow toward senior roles",
+                            activities: [
+                                "Seek promotions after 2-3 years",
+                                "Take on leadership opportunities",
+                                "Mentor junior team members",
+                                "Consider specializations"
+                            ]
+                        }
+                    ]
+                }
+            };
+
+            const orderedYears = ["High School", "Freshman", "Sophomore", "Junior", "Senior", "Post-Grad"];
+            let startIndex = orderedYears.indexOf(currentYear);
+            if (startIndex === -1) startIndex = 0;
+
+            const result = [];
+            for (let i = startIndex; i < orderedYears.length; i++) {
+                result.push(timelines[orderedYears[i]]);
+            }
+            return result;
+        }
+
+        let currentQuestion = 0;
+        let quizAnswers = [];
+        let likes = {};
+        let userLikes = {};
+        let currentResourceTab = 'certifications';
+
+        careers.forEach(career => {
+            likes[career.id] = Math.floor(Math.random() * 50);
+            userLikes[career.id] = false;
+        });
+
+        function showSection(sectionName) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(sectionName).classList.add('active');
+            event.target.classList.add('active');
+
+            if (sectionName === 'careers') {
+                renderCareers();
+            } else if (sectionName === 'quiz') {
+                startQuiz();
+            } else if (sectionName === 'compare') {
+                initComparison();
+            } else if (sectionName === 'resources') {
+                showResourceTab('certifications');
+            }
+        }
+
+        function startQuiz() {
+            currentQuestion = 0;
+            quizAnswers = [];
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const progress = ((currentQuestion) / quizQuestions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Question ${currentQuestion} of ${quizQuestions.length}`;
+
+            if (currentQuestion >= quizQuestions.length) {
+                showResults();
+                return;
+            }
+
+            const q = quizQuestions[currentQuestion];
+            const content = `
+                <div class="question-card">
+                    <h3 class="question-title">${q.question}</h3>
+                    <div class="options" id="options">
+                        ${q.options.map((opt, i) => `
+                            <div class="option" onclick="selectOption(${i}, '${opt.value}')">
+                                ${opt.text}
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+                    <button class="btn btn-primary" onclick="nextQuestion()" disabled id="nextBtn">
+                        ${currentQuestion === quizQuestions.length - 1 ? 'View Results' : 'Continue'}
+                    </button>
+                </div>
+            `;
+            document.getElementById('quizContent').innerHTML = content;
+        }
+
+        function selectOption(index, value) {
+            document.querySelectorAll('.option').forEach((opt, i) => {
+                opt.classList.toggle('selected', i === index);
+            });
+            quizAnswers[currentQuestion] = value;
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            renderQuestion();
+        }
+
+        function showResults() {
+            const answerCounts = {};
+            quizAnswers.forEach(answer => {
+                answerCounts[answer] = (answerCounts[answer] || 0) + 1;
+            });
+
+            const topAnswers = Object.entries(answerCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 4)
+                .map(a => a[0]);
+
+            const matchedCareers = careers
+                .map(career => {
+                    const matches = career.type.filter(t => topAnswers.includes(t)).length;
+                    return { ...career, matchScore: matches };
+                })
+                .filter(c => c.matchScore > 0)
+                .sort((a, b) => b.matchScore - a.matchScore)
+                .slice(0, 5);
+
+            document.getElementById('progressFill').style.width = '100%';
+            document.getElementById('progressText').textContent = 'Assessment Complete';
+
+            let resultHTML = `
+                <div class="result-section">
+                    <div class="result-header">
+                        <h2>Your Top Career Matches</h2>
+                        <p>Based on your responses, these careers align with your preferences</p>
+                    </div>
+                    ${matchedCareers.map(career => `
+                        <div class="career-card" style="margin-bottom: 16px;">
+                            <div class="career-header">
+                                <div>
+                                    <h2 class="career-title" onclick="showCareerDetail(${career.id})">${career.title}</h2>
+                                    <span class="badge badge-${career.difficulty}">${career.difficulty.toUpperCase()}</span>
+                                    <span class="badge" style="background-color: #1f6feb1a; color: #58a6ff; border: 1px solid #1f6feb;">
+                                        ${Math.round((career.matchScore / 4) * 100)}% Match
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="salary">${career.salary}</div>
+                            <p class="description">${career.description}</p>
+                            <div class="info-row">
+                                <div class="info-item"><strong>Remote:</strong> ${career.remote}</div>
+                                <div class="info-item"><strong>Demand:</strong> ${career.demand}</div>
+                            </div>
+                            <div class="skills">
+                                ${career.skills.slice(0, 5).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                    <div style="display: flex; gap: 12px; margin-top: 24px;">
+                        <button class="btn btn-secondary" onclick="startQuiz()">Retake Assessment</button>
+                        <button class="btn btn-primary" onclick="showSection('careers')">View All Careers</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quizContent').innerHTML = resultHTML;
+        }
+
+        function renderCareers() {
+            let filteredCareers = [...careers];
+            
+            const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+            const difficultyFilter = document.getElementById('difficultyFilter')?.value || 'all';
+            const salaryFilter = document.getElementById('salaryFilter')?.value || 'all';
+            const sortFilter = document.getElementById('sortFilter')?.value || 'name';
+
+            if (searchTerm) {
+                filteredCareers = filteredCareers.filter(c => 
+                    c.title.toLowerCase().includes(searchTerm) ||
+                    c.description.toLowerCase().includes(searchTerm) ||
+                    c.skills.some(s => s.toLowerCase().includes(searchTerm))
+                );
+            }
+
+            if (difficultyFilter !== 'all') {
+                filteredCareers = filteredCareers.filter(c => c.difficulty === difficultyFilter);
+            }
+
+            if (salaryFilter !== 'all') {
+                if (salaryFilter === '50-80') {
+                    filteredCareers = filteredCareers.filter(c => c.salaryMin >= 50000 && c.salaryMin < 80000);
+                } else if (salaryFilter === '80-120') {
+                    filteredCareers = filteredCareers.filter(c => c.salaryMin >= 80000 && c.salaryMin < 120000);
+                } else if (salaryFilter === '120+') {
+                    filteredCareers = filteredCareers.filter(c => c.salaryMin >= 120000);
+                }
+            }
+
+            if (sortFilter === 'salary') {
+                filteredCareers.sort((a, b) => b.salaryMin - a.salaryMin);
+            } else if (sortFilter === 'likes') {
+                filteredCareers.sort((a, b) => likes[b.id] - likes[a.id]);
+            } else {
+                filteredCareers.sort((a, b) => a.title.localeCompare(b.title));
+            }
+
+            const grid = document.getElementById('careerGrid');
+            grid.innerHTML = filteredCareers.map(career => `
+                <div class="career-card">
+                    <div class="career-header">
+                        <div>
+                            <h2 class="career-title" onclick="showCareerDetail(${career.id})">${career.title}</h2>
+                            <span class="badge badge-${career.difficulty}">${career.difficulty.toUpperCase()}</span>
+                        </div>
+                        <div class="like-container">
+                            <button class="like-btn ${userLikes[career.id] ? 'liked' : ''}" onclick="toggleLike(${career.id})" id="like-${career.id}">
+                                ${userLikes[career.id] ? '★' : '☆'}
+                            </button>
+                            <span class="like-count" id="count-${career.id}">${likes[career.id]}</span>
+                        </div>
+                    </div>
+                    <div class="salary">${career.salary}</div>
+                    <p class="description">${career.description}</p>
+                    <div class="info-row">
+                        <div class="info-item"><strong>Remote:</strong> ${career.remote}</div>
+                        <div class="info-item"><strong>Demand:</strong> ${career.demand}</div>
+                    </div>
+                    <div class="skills">
+                        ${career.skills.slice(0, 5).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    <div style="margin-top: 12px;">
+                        <button class="btn btn-secondary btn-small" onclick="showCareerDetail(${career.id})">View Details</button>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('searchInput').addEventListener('input', renderCareers);
+            document.getElementById('difficultyFilter').addEventListener('change', renderCareers);
+            document.getElementById('salaryFilter').addEventListener('change', renderCareers);
+            document.getElementById('sortFilter').addEventListener('change', renderCareers);
+        }
+
+        function toggleLike(careerId) {
+            const btn = document.getElementById(`like-${careerId}`);
+            const countEl = document.getElementById(`count-${careerId}`);
+            
+            if (userLikes[careerId]) {
+                userLikes[careerId] = false;
+                btn.classList.remove('liked');
+                btn.textContent = '☆';
+                likes[careerId]--;
+            } else {
+                userLikes[careerId] = true;
+                btn.classList.add('liked');
+                btn.textContent = '★';
+                likes[careerId]++;
+            }
+            
+            countEl.textContent = likes[careerId];
+        }
+
+        function showCareerDetail(careerId) {
+            const career = careers.find(c => c.id === careerId);
+            if (!career) return;
+
+            document.getElementById('modalTitle').textContent = career.title;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div>
+                    <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                        <span class="badge badge-${career.difficulty}">${career.difficulty.toUpperCase()}</span>
+                        <span class="salary">${career.salary}</span>
+                    </div>
+                    
+                    <p class="description">${career.description}</p>
+                    
+                    <div class="section-title">Overview</div>
+                    <div class="info-row">
+                        <div class="info-item"><strong>Education:</strong> ${career.education}</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item"><strong>Remote Work:</strong> ${career.remote}</div>
+                        <div class="info-item"><strong>Job Demand:</strong> ${career.demand}</div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-item"><strong>Industries:</strong> ${career.industries.join(', ')}</div>
+                    </div>
+                    
+                    <div class="section-title">Required Skills</div>
+                    <div class="skills">
+                        ${career.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    
+                    <div class="section-title">Key Certifications</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+                        ${career.certifications.map(cert => {
+                            const certInfo = resources.certifications.find(c => c.name.includes(cert) || cert.includes(c.name.split(' ')[0]));
+                            return certInfo ? 
+                                `<a href="${certInfo.url}" target="_blank" class="cert-link" style="background-color: #0d1117; padding: 8px 12px; border-radius: 6px; border: 1px solid #30363d; display: inline-block;">${cert}</a>` :
+                                `<span class="skill-tag">${cert}</span>`;
+                        }).join('')}
+                    </div>
+                    
+                    <div class="section-title">Day-to-Day Responsibilities</div>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                        ${career.dayToDay.map(task => `
+                            <li style="padding: 8px 0; padding-left: 20px; position: relative; color: #8b949e;">
+                                <span style="position: absolute; left: 0; color: #58a6ff;">→</span>
+                                ${task}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    
+                    <div class="section-title">Career Progression Path</div>
+                    <div style="background-color: #0d1117; padding: 16px; border-radius: 6px; border: 1px solid #30363d; margin-bottom: 16px;">
+                        <p style="color: #c9d1d9; font-size: 14px;">${career.careerPath}</p>
+                    </div>
+                    
+                    <div class="section-title">Career Timeline & Roadmap</div>
+                    <div style="margin-bottom: 16px;">
+                        <label class="filter-label" style="display: block; margin-bottom: 8px;">Select your current education level:</label>
+                        <select id="timelineYear" onchange="updateTimeline(${career.id})" style="width: 100%;">
+                            <option value="High School">High School</option>
+                            <option value="Freshman" selected>College Freshman</option>
+                            <option value="Sophomore">College Sophomore</option>
+                            <option value="Junior">College Junior</option>
+                            <option value="Senior">College Senior</option>
+                            <option value="Post-Grad">Post-Graduation</option>
+                        </select>
+                    </div>
+                    
+                    <div id="timelineContainer"></div>
+                    
+                    <div style="display: flex; gap: 12px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #30363d;">
+                        <button class="btn btn-primary" onclick="addToComparison(${career.id})">Add to Comparison</button>
+                        <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('careerModal').classList.add('active');
+            updateTimeline(careerId);
+        }
+
+        function updateTimeline(careerId) {
+            const career = careers.find(c => c.id === careerId);
+            const selectedYear = document.getElementById('timelineYear').value;
+            const timeline = getCareerTimeline(career, selectedYear);
+            
+            const container = document.getElementById('timelineContainer');
+            container.innerHTML = `
+                <div class="timeline">
+                    ${timeline.map(yearData => `
+                        <div class="timeline-year">
+                            <div class="timeline-year-title">${yearData.year}</div>
+                            <div class="timeline-content">
+                                ${yearData.items.map(item => `
+                                    <div class="timeline-item">
+                                        <h4>${item.title}</h4>
+                                        <p>${item.description}</p>
+                                        <ul>
+                                            ${item.activities.map(activity => `<li>${activity}</li>`).join('')}
+                                        </ul>
+                                        ${item.certs ? `
+                                            <div style="margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px;">
+                                                ${item.certs.map(cert => {
+                                                    const certInfo = resources.certifications.find(c => 
+                                                        c.name.includes(cert) || cert.includes(c.name.split(' ')[0]) || cert.includes(c.name)
+                                                    );
+                                                    return certInfo ? 
+                                                        `<a href="${certInfo.url}" target="_blank" class="cert-link" style="background-color: #161b22; padding: 4px 8px; border-radius: 12px; border: 1px solid #1f6feb;">${cert} →</a>` :
+                                                        `<span style="color: #58a6ff; font-size: 12px;">${cert}</span>`;
+                                                }).join('')}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function closeModal() {
+            document.getElementById('careerModal').classList.remove('active');
+        }
+
+        function initComparison() {
+            const selects = ['compare1', 'compare2', 'compare3'];
+            selects.forEach(selectId => {
+                const select = document.getElementById(selectId);
+                select.innerHTML = '<option value="">Select Career</option>' + 
+                    careers.map(c => `<option value="${c.id}">${c.title}</option>`).join('');
+            });
+            updateComparison();
+        }
+
+        function updateComparison() {
+            for (let i = 1; i <= 3; i++) {
+                const select = document.getElementById(`compare${i}`);
+                const detailsDiv = document.getElementById(`compareDetails${i}`);
+                
+                if (select.value) {
+                    const career = careers.find(c => c.id == select.value);
+                    detailsDiv.innerHTML = `
+                        <div>
+                            <h3 style="color: #f0f6fc; font-size: 18px; margin-bottom: 12px;">${career.title}</h3>
+                            <div class="salary" style="margin-bottom: 12px;">${career.salary}</div>
+                            <div style="margin-bottom: 12px;">
+                                <span class="badge badge-${career.difficulty}">${career.difficulty}</span>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong style="color: #f0f6fc; font-size: 13px;">Remote Work:</strong>
+                                <p style="color: #8b949e; font-size: 13px; margin-top: 4px;">${career.remote}</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong style="color: #f0f6fc; font-size: 13px;">Demand:</strong>
+                                <p style="color: #8b949e; font-size: 13px; margin-top: 4px;">${career.demand}</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong style="color: #f0f6fc; font-size: 13px;">Education:</strong>
+                                <p style="color: #8b949e; font-size: 13px; margin-top: 4px;">${career.education}</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong style="color: #f0f6fc; font-size: 13px;">Top Skills:</strong>
+                                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                    ${career.skills.slice(0, 4).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 12px;">
+                                <strong style="color: #f0f6fc; font-size: 13px;">Key Certifications:</strong>
+                                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px;">
+                                    ${career.certifications.slice(0, 3).map(cert => `<span class="skill-tag">${cert}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-secondary btn-small" onclick="showCareerDetail(${career.id})" style="width: 100%; margin-top: 8px;">
+                                View Full Details
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    detailsDiv.innerHTML = '<p style="color: #8b949e; font-size: 14px; text-align: center; padding: 40px 20px;">Select a career to compare</p>';
+                }
+            }
+        }
+
+        function addToComparison(careerId) {
+            for (let i = 1; i <= 3; i++) {
+                const select = document.getElementById(`compare${i}`);
+                if (!select.value) {
+                    select.value = careerId;
+                    closeModal();
+                    showSection('compare');
+                    updateComparison();
+                    return;
+                }
+            }
+            alert('Comparison slots are full. Remove a career to add this one.');
+        }
+
+        function showResourceTab(tabName) {
+            currentResourceTab = tabName;
+            
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const content = document.getElementById('resourceContent');
+            const resourceList = resources[tabName];
+            
+            content.innerHTML = `
+                <ul class="resource-list">
+                    ${resourceList.map(resource => `
+                        <li class="resource-item">
+                            <h4>${resource.name}</h4>
+                            <p>${resource.description}</p>
+                            <div class="resource-tags">
+                                <span class="resource-tag">Level: ${resource.level}</span>
+                                <span class="resource-tag">Cost: ${resource.cost}</span>
+                                <span class="resource-tag">${resource.provider}</span>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <a href="${resource.url}" target="_blank" class="btn btn-secondary btn-small">
+                                    Visit Resource →
+                                </a>
+                            </div>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('careerModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Initialize
+        renderCareers();
+    
+
+</script>
+</body>
+</html>
